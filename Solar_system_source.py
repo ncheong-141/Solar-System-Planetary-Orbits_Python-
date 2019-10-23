@@ -18,18 +18,7 @@ Project: Simulating the solar system planetary orbits (3D)
     - e = 1 = parabola
     - e > 1 = hyperbola
 
-- The eccentricity is the ratio between the distance between the foci and the major axis
-
-Key Definitions: 
-    Pericentre: 
-        The point closest to the orbital focus point (also known as perihelion)
-        
-    Apocentre:  
-        The point farthet to the orbital focus point (also known as the aphelion)
-        
-    Semi-major axis:
-        
-        
+- The eccentricity is the ratio between the distance between the foci and the major axis        
 
 List of variables: 
     a  = Semi-major axis
@@ -39,15 +28,6 @@ List of variables:
     rp = distance betweeen focal point and pericentre
     ra = distance between focal point and apocentre
     theta = true anomoly (angle between radius and eccentricity vector)
-    
-    
-Equations to possibly implement 
-- Distance from focal point to peri and apocentre
-    - rp = a(1-e), ra = a(1+e)
-- Semi major axis 
-    - a = rp + ra / 2
-- Semi minor axis 
-    - b = a(1-e**2)**(1/2);
 """
 
 # Import external modules
@@ -112,27 +92,3 @@ for i in range(0,np.size(Planets)) :
 
     plt.draw() 
 
-
-"""
-for it in range (0,max_iteration) :
-    
-    start = time.time()
-    
-    for i in range (0, np.size(Planets)) :
-        
-        # Calculate spatial position of planets
-        Planets[i].r = SSF.oribital_radius_GP(Planets[i].a,Planets[i].e,Planets[i].theta);
-        Planets[i].x = SSF.x_coordinate(Planets[i].OF,Planets[i].r,Planets[i].theta);
-        Planets[i].y = SSF.y_coordinate(Planets[i].r, Planets[i].theta); 
-        Planets[i].z = SSF.z_coordinate(Planets[i].x, Planets[i].inc, Planets[i].theta);
-    
-       
-        
-        # Update pplots of new position of planets
-        ax.scatter3D(Planets[i].x,Planets[i].y,Planets[i].z)
-        plt.pause(0.0001)
-        
-    end  = time.time()
-    print(f'Time taken: {end-start:.2f} seconds')
-
-"""
